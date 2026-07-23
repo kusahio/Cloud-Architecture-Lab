@@ -128,7 +128,7 @@ A partir de esta base comenzará la incorporación progresiva de servicios cloud
 
 ---
 
-# Ejecutar el proyecto
+# Ejecutar el proyecto (No Disponible)
 
 ## Requisitos
 
@@ -159,7 +159,7 @@ La documentación se encuentra organizada por áreas.
 | docs/architecture.md | Filosofía del proyecto, arquitectura y evolución del sistema |
 | docs/roadmap.md | Roadmap completo del laboratorio |
 | docs/services.md | Rol de cada servicio cloud dentro del proyecto |
-| docs/decisions.md | Decisiones de diseño y arquitectura |
+| docs/adrs.md | Decisiones de diseño y arquitectura |
 
 ---
 
