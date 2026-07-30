@@ -16,7 +16,7 @@ El objetivo no consiste en utilizar la mayor cantidad posible de servicios cloud
 
 | Etapa | Estado |
 |--------|--------|
-| 0. Fundación del proyecto | ⚙ |
+| 0. Fundación del proyecto | ✓ |
 | 1. Amazon S3 | ⏱ |
 | 2. IAM | ⏱ |
 | 3. Lambda | ⏱ |
@@ -64,7 +64,7 @@ Contar con una API estable sobre la cual incorporar nuevos componentes.
 
 Estado:
 
-⚙ En Proceso
+✓ Completado
 
 ---
 

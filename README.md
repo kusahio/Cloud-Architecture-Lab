@@ -81,7 +81,7 @@ La arquitectura evolucionará progresivamente incorporando nuevos componentes cl
 
 | Etapa | Estado |
 |--------|--------|
-| Base del proyecto | ⚙ |
+| Base del proyecto | ✓ |
 | Amazon S3 | ⏱ |
 | IAM | ⏱ |
 | Secrets Manager | ⏱ |

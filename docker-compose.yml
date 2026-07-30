@@ -1,0 +1,49 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres_db
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=cloud_lab
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U admin -d cloud_lab" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  localstack:
+    image: localstack/localstack:3.0
+    container_name: localstack
+    ports:
+      - '4566:4566'
+    environment:
+      - SERVICES=s3,iam,lambda,sqs,sns
+      - DEFAULT_REGION=us-east-1
+    volumes:
+      - localstack_data:/var/lib/localstack
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nest_app
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env.development
+    environment:
+      - DATABASE_URL=postgresql://admin:admin@postgres:5432/cloud_lab?schema=public
+    depends_on:
+      postgres:
+        condition: service_healthy
+      localstack:
+        condition: service_started
+
+volumes:
+  postgres_data:
+  localstack_data:

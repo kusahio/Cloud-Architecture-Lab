@@ -1,4 +1,10 @@
 /// <reference types="jest" />
+import { config } from 'dotenv';
+import { resolve } from 'node:path';
+
+const envFile = `.env.${process.env.NODE_ENV || 'development'}`;
+config({ path: resolve(__dirname, '..', envFile) });
+
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import request from 'supertest';
